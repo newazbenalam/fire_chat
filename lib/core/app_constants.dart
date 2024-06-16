@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 
+// App Constants
 const String appName = "Fire Chat";
 
+// Images
+const String logo1 = 'assets/logo1.png';
+const String googlePurpleIcon = 'assets/gpurple.png';
+
+// Colors
 const Color backgroundPrimaryColor = Color.fromARGB(255, 238, 234, 245);
 const Color primaryColor = Color(0xFF6200EE);
+const Color primaryColorMessage = Color.fromARGB(255, 112, 49, 230);
 const Color primaryColorLight = Color.fromARGB(255, 210, 196, 245);
 const Color primaryColorDark = Color(0xFF3700B3);
 const Color secondaryColor = Color(0xFF03DAC6);
