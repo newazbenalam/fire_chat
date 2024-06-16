@@ -22,10 +22,6 @@ class LoginScreen extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: backgroundPrimaryColor,
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text('Login'),
-      ),
       body: Center(
         child: Form(
           key: formKey,
@@ -33,25 +29,46 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Image.asset(
+                  logo1,
+                  height: 200,
+                ),
                 const Center(
-                  child: Text('Login Screen'),
+                  child: Column(
+                    children: [
+                      Text('Welcome back!'),
+                      Text('Login to your account'),
+                    ],
+                  ),
                 ),
                 const SizedBox(
-                  height: 24,
+                  height: 18,
                 ),
                 EmailForm(controller: controller),
                 const SizedBox(
-                  height: 24,
+                  height: 18,
                 ),
                 PasswordForm(controller: controller),
                 const SizedBox(
-                  height: 24,
+                  height: 18,
                 ),
                 LoginButton(formKey: formKey, controller: controller),
                 const SizedBox(
-                  height: 24,
+                  height: 18,
                 ),
                 RegisterButton(formKey: formKey, controller: controller),
+                const SizedBox(
+                  height: 18,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    controller.onGoogleLoginButtonPressed();
+                  },
+                  child: Image.asset(
+                    googlePurpleIcon,
+                    height: 80,
+                  ),
+                ),
               ],
             ),
           ),

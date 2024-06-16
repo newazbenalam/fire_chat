@@ -1,6 +1,8 @@
 import 'package:fire_chat/core/app_constants.dart';
 import 'package:fire_chat/features/login/presentation/getx/login_controller.dart';
+import 'package:fire_chat/features/register/presentation/screens/register_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class RegisterButton extends StatelessWidget {
   const RegisterButton({
@@ -20,9 +22,8 @@ class RegisterButton extends StatelessWidget {
       height: 60,
       child: ElevatedButton(
         onPressed: () {
-          if (formKey.currentState!.validate()) {
-            controller.onLoginButtonPressed();
-          }
+          Get.to(() => const RegisterScreen(),
+              transition: Transition.rightToLeftWithFade);
         },
         style: ButtonStyle(
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -54,9 +55,9 @@ class LoginButton extends StatelessWidget {
       width: double.infinity,
       height: 60,
       child: ElevatedButton(
-        onPressed: () {
+        onPressed: () async {
           if (formKey.currentState!.validate()) {
-            controller.onLoginButtonPressed();
+            await controller.onLoginButtonPressed();
           }
         },
         style: ButtonStyle(
